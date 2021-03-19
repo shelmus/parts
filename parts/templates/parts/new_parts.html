@@ -1,0 +1,24 @@
+{% extends 'parts/base.html' %}
+
+{% block content %}
+{% if messages %}
+<div class="alert alert-success">
+<ul class="messages">
+{% for message in messages %}
+<li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+{% endfor %}
+</ul>
+</div>
+{% endif %}
+<br>
+<br>
+<br>
+<h1>New Part</h1>
+<form method="POST" class"post-form">
+  {% csrf_token %}
+  <table class="table table-bordered">
+    {{ form.as_table }}
+  </table>
+  <button type="submit" class="save btn btn-primary">Save</button>
+</form>
+{% endblock %}

@@ -1,0 +1,45 @@
+{% extends 'parts/base.html' %}
+
+{% block content %}
+<br>
+<br>
+<br>
+    <div class="container container-fluid position-absolute">
+      <h2>Parts List</h2>
+      <table class="table table-bordered table-sm">
+        <thead>
+          <tr align="center">
+            <th>Serial</th>
+            <th>Model</th>
+            <th>Brand</th>
+            <th>Type</th>
+            <th>Size</th>
+            <th>Status</th>
+            <th>Location</th>
+            <th>Description</th>
+            <th>Shipping #</th>
+            <th>PO Number</th>
+            <th>Edit</th>
+          </tr>
+        </thead>
+        {% for part in parts %}
+        <tbody>
+          <tr align="char">
+            <td>{{ part.serial }}</td>
+            <td>{{ part.model }}</td>
+            <td>{{ part.brand }}</td>
+            <td>{{ part.type }}</td>
+            <td>{{ part.size }}</td>
+            <td>{{ part.status }}</td>
+            <td>{{ part.location }}</td>
+            <td>{{ part.description }}</td>
+            <td>{{ part.shipping }}</td>
+            <td>{{ part.po_number }}</td>
+            <td>Testing for a button</td>
+          </tr>
+        </tbody>
+        {% endfor %}
+      </table>
+    </div>
+    <br>
+{% endblock %}
